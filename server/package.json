@@ -21,7 +21,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "inngest": "^3.44.3",
+    "inngest": "^3.54.0",
     "ws": "^8.20.0"
   },
   "devDependencies": {
