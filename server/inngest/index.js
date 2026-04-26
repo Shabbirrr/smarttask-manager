@@ -6,9 +6,9 @@ export const inngest = new Inngest({ id: "Project Management" });
 // ✅ User Creation
 export const syncUserCreation = inngest.createFunction(
   {
-    id: "Sync-User-Creation",
-    triggers: [{ event: "clerk/user.created" }],
-  },
+    id: "Sync-User-Creation"},
+    { event: "clerk/user.created" },
+  
   async ({ event }) => {
     console.log("CREATE RUNNING");
 
@@ -28,9 +28,8 @@ export const syncUserCreation = inngest.createFunction(
 // ✅ User Deletion
 export const syncUserDeletion = inngest.createFunction(
   {
-    id: "Sync-User-Deletion",
-    triggers: [{ event: "clerk/user.deleted" }],
-  },
+    id: "Sync-User-Deletion"},
+    { event: "clerk/user.deleted" },
   async ({ event }) => {
     console.log("DELETE RUNNING");
 
@@ -45,9 +44,8 @@ export const syncUserDeletion = inngest.createFunction(
 // ✅ User Update
 export const syncUserUpdate = inngest.createFunction(
   {
-    id: "Sync-User-Update",
-    triggers: [{ event: "clerk/user.updated" }],
-  },
+    id: "Sync-User-Update"},
+    { event: "clerk/user.updated" },
   async ({ event }) => {
     console.log("UPDATE RUNNING");
 
