@@ -62,8 +62,88 @@ export const syncUserUpdate = inngest.createFunction(
   }
 );
 
+// ✅ Workspace Creation
+const syncWorkspaceCreation = inngest.createFunction(
+  {id: "Sync-Workspace-Creation"},
+  { event: "clerk/organization.created" },
+  async ({ event }) => {
+    console.log("WORKSPACE CREATE RUNNING");
+    const { data } = event;
+    await prisma.workspace.create({
+      data: {
+        id: data.id,
+        name: data.name,
+        slug: data.slug,
+        ownerId: data.created_by,
+        image: data.image_url,
+      },
+    });
+    //Add the owner to the organization
+    await prisma.workspaceMember.create({
+      data: {
+        userId: data.created_by,
+        workspaceId: data.id,
+        role: "ADMIN",
+      },
+    });
+  }
+);
+
+// ✅ Workspace Update 
+const syncWorkspaceUpdate = inngest.createFunction(
+  {id: "Sync-Workspace-Update"},
+  { event: "clerk/organization.updated" },
+  async ({ event }) => {
+    console.log("WORKSPACE UPDATE RUNNING");
+    const { data } = event;
+    await prisma.workspace.update({
+      where: { id: data.id },
+      data: {
+        name: data.name,
+        slug: data.slug,
+        image: data.image_url,
+      },
+    });
+  }
+);
+
+// ✅ Workspace Deletion
+const syncWorkspaceDeletion = inngest.createFunction(
+  {id: "Sync-Workspace-Deletion"},
+  {event: "clerk/organization.deleted" },
+  async ({ event }) => {
+    console.log("WORKSPACE DELETE RUNNING");
+    const { data } = event;
+    await prisma.workspace.delete({
+      where: { id: data.id },
+    });
+  }
+);
+
+//✅ Workspace Member Data Save
+const syncWorkspaceMemberCreation = inngest.createFunction(
+  {id: "Sync-Workspace-Member-Data"},
+  { event: "clerk/organizationInvitation.accepted" },
+  async ({ event }) => {
+    console.log("WORKSPACE MEMBER DATA SAVE RUNNING");
+    const { data } = event;
+    await prisma.workspaceMember.create({
+      data: {
+        userId: data.user_id,
+        workspaceId: data.organization_id,
+        role: String(data.role_name).toUpperCase(),
+      },
+    });
+  }
+);
+
+// Export all functions
 export const functions = [
   syncUserCreation,
   syncUserDeletion,
   syncUserUpdate,
+  syncWorkspaceCreation,
+  syncWorkspaceUpdate,
+  syncWorkspaceDeletion,
+  syncWorkspaceMemberCreation,
 ];
