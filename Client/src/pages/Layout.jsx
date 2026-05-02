@@ -9,14 +9,22 @@ import { useUser, SignIn } from '@clerk/clerk-react'
 
 const Layout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-    const { loading } = useSelector((state) => state.workspace)
+    const { loading, workspaces } = useSelector((state) => state.workspace)
     const dispatch = useDispatch()
     const {user, isLoaded} = useUser()
+    const {getToken} = useAuth()
 
     // Initial load of theme
     useEffect(() => {
         dispatch(loadTheme())
     }, [])
+
+    //Initial load of workspaces
+    useEffect(() => {
+        if (isLoaded && user && workspaces.length === 0) {
+            dispatch(fetchWorkspaces({getToken}))
+        }
+    }, [user, isLoaded])
 
     if (!user){
         return(
