@@ -1,16 +1,16 @@
 // Get all workspaces for user
 export const getWorkspaces = async (req, res) => {
     try {
-        const userId = await req.auth();
+        const {userId} = await req.auth();
         const workspaces = await prisma.workspace.findMany({
             where: {
                 members: {some: {userId: userId}}},
             include: {
-                members: {include:{userId:true}},
+                members: {include:{user:true}},
                 projects:{
                     include: {
-                        tasks: {include: {assingee: true, comments: {include: {user: true}}}},
-                        members: {include: {userId: true}}
+                        tasks: {include: {assignee: true, comments: {include: {user: true}}}},
+                        members: {include: {user: true}}
                     }
                 },
                 owner: true
@@ -26,7 +26,7 @@ export const getWorkspaces = async (req, res) => {
 // Add member to workspace
 export const addMember = async (req, res) => {
     try {
-        const userId = await req.auth();
+        const {userId} = await req.auth();
         const { email, role, workspaceId, message}= req.body;
         // Check if the user exists
         const user = await prisma.user.findUnique({ where: { email } });
