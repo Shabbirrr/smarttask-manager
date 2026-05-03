@@ -52,7 +52,7 @@ export const addMember = async (req, res) => {
             return res.status(403).json({error: "Only admins can add members"});
         }
         // Check if the user is already a member
-        const existingMember = await prisma.workspaceMember.find((member)=> member.userId===userId);
+        const existingMember = workspace.members.find((member)=> member.userId===userId);
         if(existingMember){
             return res.status(400).json({error: "User is already a member"});
         }
@@ -61,7 +61,8 @@ export const addMember = async (req, res) => {
             data: {
                 userId: user.id,
                 workspaceId,
-                role,
+                role , 
+                message: message || "" 
             }
         })
 

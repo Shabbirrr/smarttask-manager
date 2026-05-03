@@ -22,9 +22,9 @@ const Layout = () => {
 
     //Initial load of workspaces
     useEffect(() => {
-     if (isLoaded && user && workspaces.length === 0) {
-         dispatch(fetchWorkspaces({getToken}))
-     }
+        if (isLoaded && user && workspaces.length === 0) {
+           dispatch(fetchWorkspaces({getToken}))
+        }
     }, [user, isLoaded])
 
     if (!user){
@@ -41,13 +41,13 @@ const Layout = () => {
         </div>
     )
 
-    if(user && workspaces.length===0){
-        return (
-            <div className='min-h-screen flex justify-center items-center'>
-                <CreateOrganization />
-            </div>
-        )
-    }
+    // if(user && workspaces.length===0){
+    //     return (
+    //         <div className='min-h-screen flex justify-center items-center'>
+    //             <CreateOrganization />
+    //         </div>
+    //     )
+    // }
 
     return (
         <div className="flex bg-white dark:bg-zinc-950 text-gray-900 dark:text-slate-100">
