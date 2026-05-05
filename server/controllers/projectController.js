@@ -1,4 +1,4 @@
-import prisma from "../configs/prisma";
+import prisma from "../configs/prisma.js";
 
 // Create project
 export const createProject = async (req,res) =>{
@@ -9,7 +9,7 @@ export const createProject = async (req,res) =>{
 
         // Check if user is admin
         const workspace = await prisma.workspace.findUnique({
-            where: {id: workspaceid},
+            where: {id: workspaceId},
             include: {members: {include: {user: true}}}
         })
 
@@ -48,14 +48,13 @@ export const createProject = async (req,res) =>{
                     membersToAdd.push(member.user.id);
                 }
             })
-        }
-        
-        await prisma.projectMember.createMany({
+            await prisma.projectMember.createMany({
             data: membersToAdd.map(memberId => ({
                 projectId: project.id,
                 userId: memberId,
             }))
         })
+        }
 
         const projectWithMembers = await prisma.project.findUnique({
             where: {id: project.id},
@@ -72,7 +71,7 @@ export const createProject = async (req,res) =>{
 
 
     } catch (error) {
-        console,log(error);
+        console.log(error);
         res.status(500).json({message:error.message || error.code});
         
 }}
@@ -83,12 +82,12 @@ export const createProject = async (req,res) =>{
 export const updateProject = async (req,res) =>{
     try {
         const {userId} = await req.auth();
-        const {id, workspace, description, name, status, start_date, 
+        const {id, workspaceId, description, name, status, start_date, 
             end_date, progress, priority} = req.body;
 
         //Check if user is admin
         const workspace = await prisma.workspace.findUnique({
-                where: {id: workspaceid},
+                where: {id: workspaceId},
                 include: {members: {include: {user: true}}}
              })
             
@@ -109,7 +108,7 @@ export const updateProject = async (req,res) =>{
 
         const project = await prisma.project.update({
             where: {id},
-            data: { workspace,
+            data: { workspaceId,
                     description,
                     name,
                     status,
@@ -123,7 +122,7 @@ export const updateProject = async (req,res) =>{
         res.json({project, message: "Project updated successfully"});
         
     } catch (error) {
-        console,log(error);
+        console.log(error);
         res.status(500).json({message:error.message || error.code});
         
 }}
@@ -175,7 +174,7 @@ export const addMember = async (req,res) =>{
 
 
     } catch (error) {
-        console,log(error);
+        console.log(error);
         res.status(500).json({message:error.message || error.code});
         
 }}

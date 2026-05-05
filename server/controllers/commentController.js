@@ -1,10 +1,10 @@
-import prisma from "../configs/prisma";
+import prisma from "../configs/prisma.js";
 
 
 // Add comment
 export const addComment = async (req, res) => {
     try {
-        const {userId} = await req.auth;
+        const {userId} = await req.auth();
         const {content, taskId } = req.body;
 
         // Check if the user is project member 
@@ -52,7 +52,7 @@ export const getTaskComments = async (req, res) => {
         });
 
         res.json({comments});
-        
+
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: error.message || error.code });
