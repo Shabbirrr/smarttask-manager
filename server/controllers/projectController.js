@@ -18,7 +18,7 @@ export const createProject = async (req,res) =>{
         }
 
         if(!workspace.members.some((member)=> member.userId === userId && member.role === "ADMIN")){
-        return res.status(403).json({message: "Only admins can create projects"});
+        return res.status(403).json({message: "Only team lead can create projects"});
         }
 
         // Get team lead using email

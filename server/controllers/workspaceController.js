@@ -51,7 +51,7 @@ export const addMember = async (req, res) => {
         }
         // Check if the requester is an admin
         if(!workspace.members.find((member) => member.userId === userId && member.role === "ADMIN")){
-            return res.status(403).json({error: "Only admins can add members"});
+            return res.status(403).json({error: "Only team lead can add members"});
         }
         // Check if the user is already a member
         const existingMember = workspace.members.find((member)=> member.userId===userId);
