@@ -17,7 +17,6 @@ const Navbar = ({ setIsSidebarOpen }) => {
     const [showResults, setShowResults] = useState(false);
     const searchRef = useRef(null);
 
-    // Close dropdown on outside click
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (searchRef.current && !searchRef.current.contains(e.target)) {
@@ -28,7 +27,6 @@ const Navbar = ({ setIsSidebarOpen }) => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    // Search projects and tasks from current workspace
     const results = (() => {
         if (!query.trim() || !currentWorkspace) return [];
         const q = query.toLowerCase();
@@ -57,17 +55,17 @@ const Navbar = ({ setIsSidebarOpen }) => {
     };
 
     return (
-        <div className="w-full bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 pl-2 pr-4 xl:px-16 py-3 flex-shrink-0">
+        <div className="w-full bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 px-6 xl:px-16 py-3 flex-shrink-0">
             <div className="flex items-center justify-between w-full">
                 {/* Left section */}
                 <div className="flex items-center gap-4 min-w-0 flex-1">
                     {/* Sidebar Trigger */}
-                    <button onClick={() => setIsSidebarOpen((prev) => !prev)} className="sm:hidden p-1 rounded-lg transition-colors text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">
+                    <button onClick={() => setIsSidebarOpen((prev) => !prev)} className="sm:hidden p-2 rounded-lg transition-colors text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">
                         <PanelLeft size={20} />
                     </button>
 
                     {/* Search Input */}
-                    <div className="relative flex-1 max-w-[220px] sm:max-w-sm mr-2" ref={searchRef}>
+                    <div className="relative flex-1 max-w-[160px] sm:max-w-sm" ref={searchRef}>
                         <SearchIcon className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400 dark:text-zinc-400 size-3.5" />
                         <input
                             type="text"
