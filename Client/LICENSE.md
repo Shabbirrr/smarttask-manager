@@ -1,7 +1,7 @@
 MIT License
 
-Copyright (c) 2025 GreatStackDev
-Modifications Copyright (c) 2026 Shabbir Shah
+Copyright (c) 2025 GreatStackDev (frontend template)
+Copyright (c) 2026 Syed Shabbir Shah (backend, API, database, authentication, deployment)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
