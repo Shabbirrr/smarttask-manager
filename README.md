@@ -21,7 +21,7 @@
   <a href="#project-structure">Project Structure</a> •
   <a href="#api-reference">API Reference</a> •
   <a href="#deployment">Deployment</a> •
-  <a href="#contributing">Contributing</a> <img width="1919" height="1079" alt="Screenshot 2026-05-10 035053" src="https://github.com/user-attachments/assets/9ef52669-99ee-4e62-8336-0b77591777e0" />
+  <a href="#contributing">Contributing</a> 
 
 </p>
 
@@ -42,27 +42,32 @@ Whether you're a solo developer managing side projects or a team coordinating ac
 ### Dashboard
 Get a bird's-eye view of your workspace — stats, project overviews, recent activity, and your assigned tasks all in one place.
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](<img width="1919" height="1079" alt="Screenshot 2026-05-10 035053" src="https://github.com/user-attachments/assets/9ef52669-99ee-4e62-8336-0b77591777e0" />)
 
-![Dashboard Activity](screenshots/dashboard-activity.png)
+![Dashboard Activity](<img width="1919" height="1079" alt="Screenshot 2026-05-10 035141" src="https://github.com/user-attachments/assets/e28f223f-b4f9-437d-b820-238271c79dd6" />
+)
 
 ### Project Details & Task Management
 Dive into any project to see task lists with filtering by status, type, priority, and assignee. Track progress and manage your team.
 
-![Project Details](screenshots/project-details.png)
+![Project Details](<img width="1919" height="1079" alt="Screenshot 2026-05-10 035219" src="https://github.com/user-attachments/assets/ab3299e0-5118-4321-a927-29f07424baea" />
+)
 
 ### Create Projects & Tasks
 Quickly create new projects with status, priority, timeline, team lead, and member assignments — or spin up tasks with type, priority, assignee, and due dates.
 
 <p>
-  <img src="screenshots/create-project.png" alt="Create Project" width="49%" />
-  <img src="screenshots/create-task.png" alt="Create Task" width="49%" />
+  <img src="https://github.com/user-attachments/assets/385db32b-d1b5-4c5e-9f61-92b9f6af9ec1" alt="Create Project" width="49%" />
+  <img src="https://github.com/user-attachments/assets/6b81218a-8a60-4740-aef7-a93168b31eaf" alt="Create Task" width="49%" />
 </p>
 
 ### Task Discussion
 Collaborate with real-time comments on tasks. View full task details, project context, and due dates at a glance.
 
-![Task Discussion](screenshots/task-discussion.png)
+![Task Discussion](<img width="1919" height="1079" alt="Screenshot 2026-05-10 035336" src="https://github.com/user-attachments/assets/69cdbeb0-7144-49bf-afa2-438748498264" />
+) 
+
+
 
 ---
 
