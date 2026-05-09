@@ -57,12 +57,12 @@ const Navbar = ({ setIsSidebarOpen }) => {
     };
 
     return (
-        <div className="w-full bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 px-6 xl:px-16 py-3 flex-shrink-0">
+        <div className="w-full bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 pl-2 pr-4 xl:px-16 py-3 flex-shrink-0">
             <div className="flex items-center justify-between w-full">
                 {/* Left section */}
                 <div className="flex items-center gap-4 min-w-0 flex-1">
                     {/* Sidebar Trigger */}
-                    <button onClick={() => setIsSidebarOpen((prev) => !prev)} className="sm:hidden p-2 rounded-lg transition-colors text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">
+                    <button onClick={() => setIsSidebarOpen((prev) => !prev)} className="sm:hidden p-1 rounded-lg transition-colors text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">
                         <PanelLeft size={20} />
                     </button>
 
