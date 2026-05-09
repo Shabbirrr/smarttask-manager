@@ -139,6 +139,7 @@ const TaskDetails = () => {
             <div className="w-full lg:w-1/2 flex flex-col gap-6">
                 {/* Task Info */}
                 <div className="p-5 rounded-md bg-white dark:bg-zinc-900 border border-gray-300 dark:border-zinc-800 ">
+                    <p className="text-xl font-medium mb-2.5">Task Details</p>
                     <div className="mb-3">
                         <h1 className="text-lg font-medium text-gray-900 dark:text-zinc-100">{task.title}</h1>
                         <div className="flex flex-wrap gap-2 mt-2">
@@ -175,8 +176,8 @@ const TaskDetails = () => {
                 {/* Project Info */}
                 {project && (
                     <div className="p-4 rounded-md bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-200 border border-gray-300 dark:border-zinc-800 ">
-                        <p className="text-xl font-medium mb-4">Project Details</p>
-                        <h2 className="text-gray-900 dark:text-zinc-100 flex items-center gap-2"> <PenIcon className="size-4" /> {project.name}</h2>
+                        <p className="text-xl font-medium mb-2.5">Project Details</p>
+                        <h2 className="text-gray-900 dark:text-zinc-100 flex items-center gap-2"> {project.name}</h2>
                         <p className="text-xs mt-3">Project Start Date: {format(new Date(project.start_date), "dd MMM yyyy")}</p>
                         <div className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-zinc-400 mt-3">
                             <span>Status: {project.status}</span>
