@@ -21,8 +21,8 @@
   <a href="#project-structure">Project Structure</a> •
   <a href="#api-reference">API Reference</a> •
   <a href="#deployment">Deployment</a> •
-  <a href="#contributing">Contributing</a> •
-  <a href="#license">License</a>
+  <a href="#contributing">Contributing</a> <img width="1919" height="1079" alt="Screenshot 2026-05-10 035053" src="https://github.com/user-attachments/assets/9ef52669-99ee-4e62-8336-0b77591777e0" />
+
 </p>
 
 ---
@@ -377,9 +377,4 @@ Contributions are welcome! See [CONTRIBUTING.md](Client/CONTRIBUTING.md) for gui
 
 ---
 
-## License
 
-This project is licensed under the MIT License — see [LICENSE.md](Client/LICENSE.md) for details.
-
-Copyright (c) 2025 GreatStackDev  
-Modifications Copyright (c) 2026 Shabbir Shah
