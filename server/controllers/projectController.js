@@ -141,7 +141,7 @@ export const addMember = async (req,res) =>{
         })
 
         if(!project){
-            res.status(404).json({message: "Project not found"});
+           return res.status(404).json({message: "Project not found"});
         }
 
         if(project.team_lead !== userId){

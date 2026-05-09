@@ -54,7 +54,7 @@ export const addMember = async (req, res) => {
             return res.status(403).json({error: "Only team lead can add members"});
         }
         // Check if the user is already a member
-        const existingMember = workspace.members.find((member)=> member.userId===userId);
+        const existingMember = workspace.members.find((member)=> member.userId===user.id);
         if(existingMember){
             return res.status(400).json({error: "User is already a member"});
         }
