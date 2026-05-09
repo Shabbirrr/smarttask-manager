@@ -42,16 +42,14 @@ Whether you're a solo developer managing side projects or a team coordinating ac
 ### Dashboard
 Get a bird's-eye view of your workspace — stats, project overviews, recent activity, and your assigned tasks all in one place.
 
-![Dashboard](<img width="1919" height="1079" alt="Screenshot 2026-05-10 035053" src="https://github.com/user-attachments/assets/9ef52669-99ee-4e62-8336-0b77591777e0" />)
+![Dashboard](https://github.com/user-attachments/assets/9ef52669-99ee-4e62-8336-0b77591777e0)
 
-![Dashboard Activity](<img width="1919" height="1079" alt="Screenshot 2026-05-10 035141" src="https://github.com/user-attachments/assets/e28f223f-b4f9-437d-b820-238271c79dd6" />
-)
+![Dashboard Activity](https://github.com/user-attachments/assets/e28f223f-b4f9-437d-b820-238271c79dd6)
 
 ### Project Details & Task Management
 Dive into any project to see task lists with filtering by status, type, priority, and assignee. Track progress and manage your team.
 
-![Project Details](<img width="1919" height="1079" alt="Screenshot 2026-05-10 035219" src="https://github.com/user-attachments/assets/ab3299e0-5118-4321-a927-29f07424baea" />
-)
+![Project Details](https://github.com/user-attachments/assets/ab3299e0-5118-4321-a927-29f07424baea)
 
 ### Create Projects & Tasks
 Quickly create new projects with status, priority, timeline, team lead, and member assignments — or spin up tasks with type, priority, assignee, and due dates.
@@ -64,7 +62,7 @@ Quickly create new projects with status, priority, timeline, team lead, and memb
 ### Task Discussion
 Collaborate with real-time comments on tasks. View full task details, project context, and due dates at a glance.
 
-![Task Discussion](<img width="1919" height="1079" alt="Screenshot 2026-05-10 035336" src="https://github.com/user-attachments/assets/69cdbeb0-7144-49bf-afa2-438748498264" />
+![Task Discussion](https://github.com/user-attachments/assets/69cdbeb0-7144-49bf-afa2-438748498264
 ) 
 
 
